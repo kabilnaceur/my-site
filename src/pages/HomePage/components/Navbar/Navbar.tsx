@@ -52,7 +52,7 @@ const Navbar = () => {
           <div className={`${styles.divItem} `} />
         </li>
         <li onClick={() => handleClick(5)}>
-          Contact
+          Contact me
           <div className={`${styles.divItem}`} />
         </li>
       </ul>
