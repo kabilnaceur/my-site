@@ -1,0 +1,73 @@
+@import "../../../../styles/abstracts/colors.scss";
+@font-face {
+  font-family: "Montserrat-bold";
+  src: url("../../../../assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  .projectsContainer {
+    display: flex;
+    flex-direction: column;
+    .prjectCard {
+      margin: 20px 0px;
+      padding: 20px 90px 0px 90px;
+      border-radius: 30px;
+      h3 {
+        font-size: 35px;
+        margin: 15px 0px;
+      }
+      h5 {
+        font-size: 16px;
+        margin: 15px 0px;
+      }
+      .projectImage {
+        margin-top: 40px;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 20px;
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+        }
+      }
+      .projectinformation {
+        display: flex;
+        justify-content: space-between;
+        div:nth-of-type(2) {
+          h5 {
+            margin: 15px 0px;
+          }
+          color: #7f7f82;
+          display: flex;
+          justify-content: flex-end;
+          flex-direction: column;
+          div {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+          }
+          .icon {
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+}

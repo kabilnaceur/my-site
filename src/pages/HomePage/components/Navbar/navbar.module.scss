@@ -1,0 +1,223 @@
+@import "../../../../styles/abstracts/colors.scss";
+@font-face {
+  font-family: "Montserrat-bold";
+  src: url("../../../../assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.nav {
+  font-family: "Montserrat-bold", sans-serif !important;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    font-size: 12px;
+    cursor: pointer;
+    @media screen and (max-width: 700px) {
+      display: none;
+      flex-direction: column;
+    }
+
+    li {
+      margin: 1em;
+      position: relative;
+      &:hover {
+        color: $primary;
+      }
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.light {
+  color: $dark-300;
+  background-color: $white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  .themeButon {
+    color: $dark-900;
+  }
+  .buttonMenu {
+    color: $dark-300;
+  }
+}
+
+.nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(103, 82, 234, 0) 15%,
+    rgba(103, 82, 234, 0.5) 50%,
+    rgba(103, 82, 234, 0) 85%
+  );
+}
+
+.dark {
+  color: $white;
+  background-color: $dark-700;
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.1);
+  .themeButon {
+    color: $white;
+  }
+  .buttonMenu {
+    color: $white;
+  }
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  color: $dark-900;
+}
+
+.contact {
+  width: 170px;
+  padding-right: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 700px) {
+    display: none;
+    max-width: 100vw;
+    border: none;
+    padding-bottom: 20px;
+  }
+
+  .number {
+    background-color: $secoundary;
+    color: $white;
+    padding: 10px 20px;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+  }
+  .description {
+    font-size: 12px;
+  }
+}
+.contact2 {
+  padding: 0px 30px;
+  border-left: 1.2px solid $dark-200;
+  height: 30px;
+  width: 100%;
+  max-width: 230px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 700px) {
+    display: block;
+    max-width: 100vw;
+    border: none;
+    padding-bottom: 20px;
+  }
+
+  .number {
+    background-color: $secoundary;
+    color: $white;
+    padding: 10px 5px;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+  }
+  .description {
+    font-size: 12px;
+  }
+}
+.divItem {
+  width: 3px;
+  height: 20px;
+  border-left: 2px solid $secoundary;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  display: none;
+  @media screen and (max-width: 700px) {
+    left: 90%;
+    bottom: -0px;
+  }
+  &.divActive {
+    display: block;
+  }
+}
+.show {
+  display: block !important;
+}
+.buttonMenu {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  @media screen and (max-width: 700px) {
+    display: block;
+  }
+}
+.divLogo {
+  padding-left: 100px;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+}
+.logoButton {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  position: relative;
+  color: white;
+}
+.masked {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Montserrat-bold", sans-serif !important;
+}
+
+.masked::before {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: $primary;
+  content: attr(data-content);
+  text-align: center;
+  color: white;
+  width: 20px;
+  height: 25px;
+  padding-left: 5px;
+  border-radius: 50%;
+}
+
+.masked::after {
+  content: attr(data-content);
+  color: $dark-900;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+}

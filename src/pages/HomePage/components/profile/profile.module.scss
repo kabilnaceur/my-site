@@ -1,0 +1,52 @@
+@import "../../../../styles/abstracts/colors.scss";
+
+h1 {
+  color: $dark-900;
+  font-size: 60px;
+  line-height: 1.5;
+}
+h2 {
+  color: $dark-900;
+  font-size: 25px;
+}
+
+.underline {
+  color: $primary;
+  text-decoration: underline;
+}
+.profileContainer {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.cercle {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: $secoundary;
+  position: absolute;
+  z-index: 1;
+  right: 100px;
+}
+.image {
+  position: relative;
+  z-index: 2;
+  margin-right: 200px;
+  img {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+  }
+}
+
+.imageContainer {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+}
+.text {
+  position: relative;
+  z-index: 2;
+}
