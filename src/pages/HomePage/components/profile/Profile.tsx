@@ -1,5 +1,5 @@
 import styles from "./profile.module.scss";
-import profile from "../../../../assets/images/kabil1.jpg";
+import { profile } from "../../../../assets/images";
 import "../../../../styles/main.scss";
 import Button from "../../../../components/Button/Button";
 

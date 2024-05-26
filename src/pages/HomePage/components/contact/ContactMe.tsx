@@ -1,5 +1,5 @@
 import styles from "./contactMe.module.scss";
-import profile from "../../../../assets/images/kabil1.jpg";
+import { profile } from "../../../../assets/images";
 import { TfiFacebook, TfiLinkedin } from "react-icons/tfi";
 import { SiGithub } from "react-icons/si";
 import Button from "../../../../components/Button/Button";
