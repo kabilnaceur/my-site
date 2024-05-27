@@ -1,4 +1,5 @@
 import ContactMe from "./components/contact/ContactMe";
+import Informations from "./components/informations/Informations";
 import Navbar from "./components/navbar/Navbar";
 import Profile from "./components/profile/Profile";
 import Projects from "./components/projects/Projects";
@@ -10,6 +11,9 @@ function HomePage() {
       <Navbar />
       <div className={styles.container}>
         <Profile />
+      </div>
+      <Informations />
+      <div className={styles.container}>
         <Skills />
         <Projects />
       </div>

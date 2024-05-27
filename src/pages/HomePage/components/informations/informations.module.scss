@@ -1,0 +1,74 @@
+@import "../../../../styles/abstracts/colors.scss";
+@font-face {
+  font-family: "Montserrat-bold";
+  src: url("../../../../assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container {
+  background-color: $dark-000;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 100px;
+}
+.informationContainer {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  h3 {
+    font-size: 15px;
+    color: #7f7f82;
+  }
+  .informationText {
+    h3:nth-of-type(1) {
+      font-family: "Montserrat-bold", sans-serif !important;
+    }
+  }
+  .description {
+    margin-left: 30px;
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: moveCircle 6s infinite linear;
+}
+@keyframes moveCircle {
+  0% {
+    transform: translate(-300px, -300px); /* Start outside the container */
+  }
+  100% {
+    transform: translate(100%, 200px); /* Adjust 100% and 50px as needed */
+  }
+}
+
+.informationContainerhover {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  h3 {
+    font-size: 21px;
+  }
+  .description {
+    h3 {
+      color: $dark-900;
+    }
+  }
+  .informationText {
+    h3 {
+      color: $primary;
+    }
+
+    h3:nth-of-type(1) {
+      font-family: "Montserrat-bold", sans-serif !important;
+      font-size: 30px;
+    }
+  }
+}

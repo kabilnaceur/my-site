@@ -65,7 +65,7 @@ function Projects() {
     },
     {
       company: "Cynoia Company",
-      location: "Remote",
+      location: "Tunis, TN",
       period: "February 2022 – september 2022",
       jobTitle: "Mobile developer inter",
       image: cynoia,
