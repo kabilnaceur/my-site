@@ -99,7 +99,7 @@ function Projects() {
                 <h3>{project.company}</h3>
                 <h5>{project.jobTitle}</h5>
               </div>
-              <div style={{ color: project.textColor }}>
+              <div style={{ color: project.textColor, marginLeft: 10 }}>
                 <h5>{project.period}</h5>
                 <div>
                   <FaMapMarkerAlt className={styles.icon} />

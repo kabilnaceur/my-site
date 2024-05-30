@@ -4,6 +4,12 @@ h1 {
   color: $dark-900;
   font-size: 60px;
   line-height: 1.5;
+  @media screen and (max-width: 1000px) {
+    font-size: 50px;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 40px;
+  }
 }
 h2 {
   color: $dark-900;
@@ -20,6 +26,23 @@ h2 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+  }
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.buttonContainer {
+  @media screen and (max-width: 500px) {
+    margin-bottom: 20px;
+  }
 }
 .cercle {
   width: 350px;
@@ -29,15 +52,38 @@ h2 {
   position: absolute;
   z-index: 1;
   right: 100px;
+  @media screen and (max-width: 1000px) {
+    width: 300px;
+    height: 300px;
+    right: 30px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 200px;
+    height: 200px;
+  }
 }
 .image {
   position: relative;
   z-index: 2;
   margin-right: 200px;
+  @media screen and (max-width: 1000px) {
+    margin-right: 100px;
+  }
+  @media screen and (max-width: 500px) {
+    margin-right: 20px;
+  }
   img {
     width: 450px;
     height: 450px;
     border-radius: 50%;
+    @media screen and (max-width: 1000px) {
+      width: 350px;
+      height: 350px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 200px;
+      height: 200px;
+    }
   }
 }
 
@@ -45,8 +91,14 @@ h2 {
   position: absolute;
   z-index: 1;
   right: 0;
+  @media screen and (max-width: 850px) {
+    position: static;
+  }
 }
 .text {
   position: relative;
   z-index: 2;
+  @media screen and (max-width: 850px) {
+    position: static;
+  }
 }

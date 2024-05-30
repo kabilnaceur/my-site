@@ -32,11 +32,6 @@ const Navbar = () => {
         <button className={styles.logoButton}>
           <div className={styles.masked} data-content="Kabil Naceur"></div>
         </button>
-        <div className={`${styles.contact2} `}>
-          <TfiLinkedin className={styles.icon} />{" "}
-          <SiGithub className={styles.icon} />{" "}
-          <TfiFacebook className={styles.icon} />
-        </div>
         <button onClick={handleShow} className={styles.buttonMenu}>
           <AiOutlineMenu className={styles.icon} />
         </button>
@@ -55,8 +50,15 @@ const Navbar = () => {
           Contact me
           <div className={`${styles.divItem}`} />
         </li>
+        <li>
+          <div className={`${styles.contact2} }`}>
+            <TfiLinkedin className={styles.icon} />{" "}
+            <SiGithub className={styles.icon} />{" "}
+            <TfiFacebook className={styles.icon} />
+          </div>
+        </li>
       </ul>
-      <div className={`${styles.contact} }`}>
+      <div className={`${styles.contact} `}>
         <TfiLinkedin className={styles.icon} />{" "}
         <SiGithub className={styles.icon} />{" "}
         <TfiFacebook className={styles.icon} />

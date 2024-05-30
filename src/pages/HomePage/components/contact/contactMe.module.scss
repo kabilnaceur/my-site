@@ -14,6 +14,13 @@
   align-items: center;
   margin-top: 80px;
   padding: 50px 100px;
+  @media screen and (max-width: 700px) {
+    padding: 20px;
+  }
+  @media screen and (max-width: 1050px) {
+    flex-direction: column;
+    margin-top: 120px;
+  }
   h2 {
     font-size: 40px;
     font-family: "Montserrat-bold", sans-serif !important;
@@ -25,6 +32,7 @@
   align-items: center;
   border: #d1d0d5 solid 1.5px;
   border-radius: 80px;
+  max-width: 350px;
   .information {
     h3 {
       margin-top: 5px;
@@ -76,6 +84,19 @@
   border-radius: 50%;
   padding: 30px;
   flex-direction: column;
+  @media screen and (max-width: 1050px) {
+    position: static;
+    margin-top: -100px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 400px;
+    height: 400px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 300px;
+    height: 300px;
+  }
+
   input {
     border: none;
     height: 60px;
@@ -85,6 +106,9 @@
     padding-left: 30px;
     background-color: #918bf5;
     font-size: 16px;
+    @media screen and (max-width: 700px) {
+      width: 200px;
+    }
     &::placeholder {
       color: #b9b5fe;
     }

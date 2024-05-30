@@ -7,7 +7,18 @@ import Button from "../../../../components/Button/Button";
 function ContactMe() {
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.contactContainer}>
+        <div>
+          <input placeholder="Your Email" />
+          <input placeholder="Your meassage" />
+          <Button
+            content={"Send message"}
+            color={"#6752ea"}
+            backgroundColor={"#f4f3f8"}
+          />
+        </div>
+      </div>
+      <div style={{ width: "100%" }}>
         <h2>Are you interested?</h2>
         <h2>Say hi!</h2>
         <div className={styles.imageContainer}>
@@ -25,17 +36,6 @@ function ContactMe() {
         <div className={styles.links}>
           <a>About me</a>
           <a>Projects</a>
-        </div>
-      </div>
-      <div className={styles.contactContainer}>
-        <div>
-          <input placeholder="Your Email" />
-          <input placeholder="Your meassage" />
-          <Button
-            content={"Send message"}
-            color={"#6752ea"}
-            backgroundColor={"#f4f3f8"}
-          />
         </div>
       </div>
     </div>
