@@ -3,10 +3,15 @@ import { profile } from "../../../../assets/images";
 import { TfiFacebook, TfiLinkedin } from "react-icons/tfi";
 import { SiGithub } from "react-icons/si";
 import Button from "../../../../components/Button/Button";
+import { FC } from "react";
 
-function ContactMe() {
+export interface contactMeProps {
+  scrollableContactRef: any;
+}
+
+const ContactMe: FC<contactMeProps> = ({ scrollableContactRef }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={scrollableContactRef}>
       <div className={styles.contactContainer}>
         <div>
           <input placeholder="Your Email" />
@@ -40,6 +45,6 @@ function ContactMe() {
       </div>
     </div>
   );
-}
+};
 
 export default ContactMe;

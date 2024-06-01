@@ -1,18 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import styles from "./informations.module.scss";
 interface Information {
   title: string;
   description: string;
   number: string;
 }
-function Informations() {
+export interface scrollableAboutRef {
+  scrollableAboutRef: any;
+}
+
+const Informations: FC<scrollableAboutRef> = ({ scrollableAboutRef }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
     const circle = circleRef.current;
-    let newHighlight: HTMLDivElement | null = null;
 
     if (!container || !circle) return;
 
@@ -74,23 +77,25 @@ function Informations() {
     },
   ];
   return (
-    <div className={styles.container} ref={containerRef}>
-      <div className={styles.circle} ref={circleRef} />
-      {informations.map((information: Information, index: number) => (
-        <div key={index} className={styles.informationContainer}>
-          <div className={styles.informationText}>
-            <h3>{information.number}</h3>
-            <h3>{information.title}</h3>
+    <div ref={scrollableAboutRef}>
+      <div className={styles.container} ref={containerRef}>
+        <div className={styles.circle} ref={circleRef} />
+        {informations.map((information: Information, index: number) => (
+          <div key={index} className={styles.informationContainer}>
+            <div className={styles.informationText}>
+              <h3>{information.number}</h3>
+              <h3>{information.title}</h3>
+            </div>
+            <div className={styles.description}>
+              {information.description.split("<br/>").map((line, index) => (
+                <h3 key={index}>{line}</h3>
+              ))}{" "}
+            </div>
           </div>
-          <div className={styles.description}>
-            {information.description.split("<br/>").map((line, index) => (
-              <h3 key={index}>{line}</h3>
-            ))}{" "}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Informations;

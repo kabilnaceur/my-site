@@ -8,7 +8,7 @@ import {
   siteflow,
 } from "../../../../assets/images";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { useState } from "react";
+import { FC, useState } from "react";
 
 interface Project {
   company: string;
@@ -21,7 +21,11 @@ interface Project {
   textColor: string;
 }
 
-function Projects() {
+export interface projectsprops {
+  scrollableProjectsRef: any;
+}
+
+const Projects: FC<projectsprops> = ({ scrollableProjectsRef }) => {
   const myProjects: Project[] = [
     {
       company: "Siteflow Company",
@@ -82,7 +86,7 @@ function Projects() {
     setShowAll(!showAll);
   };
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={scrollableProjectsRef}>
       <h3>My Projects</h3>
       <div className={styles.projectsContainer}>
         {displayedProjects.map((project: Project, index: number) => (
@@ -121,6 +125,6 @@ function Projects() {
       </div>
     </div>
   );
-}
+};
 
 export default Projects;
