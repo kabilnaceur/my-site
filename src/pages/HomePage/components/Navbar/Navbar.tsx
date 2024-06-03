@@ -1,18 +1,25 @@
 import styles from "./navbar.module.scss";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import "../../../../styles/main.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import { SiGithub } from "react-icons/si";
-import { TfiFacebook, TfiLinkedin } from "react-icons/tfi";
+import { TfiLinkedin } from "react-icons/tfi";
+import { FaStackOverflow } from "react-icons/fa";
 
-const Navbar = () => {
+export interface navbarProps {
+  handleClickToContact: () => void;
+  handleClickToAbout: () => void;
+  handleClickToProjects: () => void;
+}
+
+const Navbar: FC<navbarProps> = ({
+  handleClickToProjects,
+  handleClickToAbout,
+  handleClickToContact,
+}) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const handleShow = () => {
     setShowMenu(!showMenu);
-  };
-
-  const handleClick = (item: number): void => {
-    console.log("kbil");
   };
 
   useEffect(() => {
@@ -32,34 +39,48 @@ const Navbar = () => {
         <button className={styles.logoButton}>
           <div className={styles.masked} data-content="Kabil Naceur"></div>
         </button>
-        <div className={`${styles.contact2} `}>
-          <TfiLinkedin className={styles.icon} />{" "}
-          <SiGithub className={styles.icon} />{" "}
-          <TfiFacebook className={styles.icon} />
-        </div>
         <button onClick={handleShow} className={styles.buttonMenu}>
           <AiOutlineMenu className={styles.icon} />
         </button>
       </div>
 
       <ul className={showMenu ? styles.show : ""}>
-        <li onClick={() => handleClick(1)}>
+        <li onClick={handleClickToAbout}>
           About me
           <div className={`${styles.divItem} `} />
         </li>
-        <li onClick={() => handleClick(2)}>
+        <li onClick={handleClickToProjects}>
           Projects
           <div className={`${styles.divItem} `} />
         </li>
-        <li onClick={() => handleClick(5)}>
+        <li onClick={handleClickToContact}>
           Contact me
           <div className={`${styles.divItem}`} />
         </li>
+        <li>
+          <div className={`${styles.contact2} }`}>
+            <a href="https://www.linkedin.com/in/kabil-naceur-7b3a921a9/">
+              <TfiLinkedin className={styles.icon} />
+            </a>
+            <a href="https://github.com/kabilnaceur">
+              <SiGithub className={styles.icon} />
+            </a>
+            <a href="https://stackoverflow.com/users/20712322/kabil-naceur">
+              <FaStackOverflow className={styles.icon} />
+            </a>
+          </div>
+        </li>
       </ul>
-      <div className={`${styles.contact} }`}>
-        <TfiLinkedin className={styles.icon} />{" "}
-        <SiGithub className={styles.icon} />{" "}
-        <TfiFacebook className={styles.icon} />
+      <div className={`${styles.contact} `}>
+        <a href="https://www.linkedin.com/in/kabil-naceur-7b3a921a9/">
+          <TfiLinkedin className={styles.icon} />
+        </a>
+        <a href="https://github.com/kabilnaceur">
+          <SiGithub className={styles.icon} />
+        </a>
+        <a href="https://stackoverflow.com/users/20712322/kabil-naceur">
+          <FaStackOverflow className={styles.icon} />
+        </a>{" "}
       </div>
     </nav>
   );

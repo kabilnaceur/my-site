@@ -13,12 +13,13 @@
   z-index: 2;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   top: 0;
   width: 100%;
   @media screen and (max-width: 700px) {
     flex-direction: column;
+    padding: 10px 0px;
   }
   ul {
     display: flex;
@@ -92,7 +93,6 @@
 
 .contact {
   width: 170px;
-  padding-right: 100px;
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -120,7 +120,6 @@
 }
 .contact2 {
   padding: 0px 30px;
-  border-left: 1.2px solid $dark-200;
   height: 30px;
   width: 100%;
   max-width: 230px;
@@ -128,10 +127,9 @@
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 700px) {
-    display: block;
-    max-width: 100vw;
-    border: none;
-    padding-bottom: 20px;
+    display: flex;
+    padding: 0px;
+    justify-content: space-around;
   }
 
   .number {
@@ -177,7 +175,6 @@
   }
 }
 .divLogo {
-  padding-left: 100px;
   @media screen and (max-width: 700px) {
     width: 100%;
   }
