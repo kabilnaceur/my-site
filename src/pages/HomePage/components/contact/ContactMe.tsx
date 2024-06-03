@@ -4,7 +4,7 @@ import { TfiLinkedin } from "react-icons/tfi";
 import { FaStackOverflow } from "react-icons/fa";
 import { SiGithub } from "react-icons/si";
 import Button from "../../../../components/Button/Button";
-import { FC, useRef } from "react";
+import { FC, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -17,16 +17,23 @@ export type ContactFormType = {
 
 export interface contactMeProps {
   scrollableContactRef: any;
+  handleClickToAbout: () => void;
+  handleClickToProjects: () => void;
 }
 
-const ContactMe: FC<contactMeProps> = ({ scrollableContactRef }) => {
+const ContactMe: FC<contactMeProps> = ({
+  scrollableContactRef,
+  handleClickToAbout,
+  handleClickToProjects,
+}) => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [successMessage, setSuccessMessage] = useState<Boolean>(false);
   const schema = yup.object().shape({
     email: yup
       .string()
-      .email("S'il vous plaît, mettez une adresse email valide")
-      .required("Veuillez saisir votre adresse e-mail"),
-    message: yup.string().required("Veuillez entrer un message"),
+      .email("Please provide a valid email address")
+      .required("Please enter your email address"),
+    message: yup.string().required("Please enter a message"),
   });
   const {
     handleSubmit,
@@ -46,16 +53,22 @@ const ContactMe: FC<contactMeProps> = ({ scrollableContactRef }) => {
       .then(
         () => {
           reset();
+          setSuccessMessage(true);
         },
         (error) => {
           console.log(error.text);
+          setSuccessMessage(false);
         }
       );
   };
   return (
     <div className={styles.container} ref={scrollableContactRef}>
       <div className={styles.contactContainer} data-aos="fade-left">
-        <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex-column"
+        >
           {errors.email ? (
             <div className="error-div">
               <p>{errors?.email.message}</p>
@@ -63,6 +76,10 @@ const ContactMe: FC<contactMeProps> = ({ scrollableContactRef }) => {
           ) : errors.message ? (
             <div className="error-div">
               <p>{errors.message.message}</p>
+            </div>
+          ) : successMessage ? (
+            <div className="success-div">
+              <p>Your message has been sent successfully!</p>
             </div>
           ) : null}
           <input
@@ -92,15 +109,21 @@ const ContactMe: FC<contactMeProps> = ({ scrollableContactRef }) => {
             <h3>Kabil Naceur</h3>
             <h4>Front-end developer</h4>
             <div className={`${styles.contact} `}>
-              <TfiLinkedin className={styles.icon} />{" "}
-              <SiGithub className={styles.icon} />{" "}
-              <FaStackOverflow className={styles.icon} />
+              <a href="https://www.linkedin.com/in/kabil-naceur-7b3a921a9/">
+                <TfiLinkedin className={styles.icon} />
+              </a>
+              <a href="https://github.com/kabilnaceur">
+                <SiGithub className={styles.icon} />{" "}
+              </a>
+              <a href="https://stackoverflow.com/users/20712322/kabil-naceur">
+                <FaStackOverflow className={styles.icon} />
+              </a>
             </div>
           </div>
         </div>
         <div className={styles.links}>
-          <a>About me</a>
-          <a>Projects</a>
+          <button onClick={handleClickToAbout}>About me</button>
+          <button onClick={handleClickToProjects}>Projects</button>
         </div>
       </div>
     </div>

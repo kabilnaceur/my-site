@@ -6,7 +6,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 .container {
   position: relative;
   background-color: #edecf1;
@@ -65,10 +64,11 @@
   justify-content: space-between;
   width: 200px;
   margin-top: 50px;
-  a {
+  button {
     font-family: "Montserrat-bold", sans-serif !important;
     font-size: 12px;
-    cursor: pointer;
+    background-color: transparent;
+    border: none;
   }
 }
 .contactContainer {

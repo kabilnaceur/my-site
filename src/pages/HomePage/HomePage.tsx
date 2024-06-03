@@ -60,7 +60,11 @@ function HomePage() {
         <Skills />
         <Projects scrollableProjectsRef={scrollableProjectsRef} />
       </div>
-      <ContactMe scrollableContactRef={scrollableContactRef} />
+      <ContactMe
+        scrollableContactRef={scrollableContactRef}
+        handleClickToAbout={handleClickToAbout}
+        handleClickToProjects={handleClickToProjects}
+      />
       <div className={styles.buttonContainer}>
         {isVisible ? (
           <button

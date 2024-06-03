@@ -45,30 +45,42 @@ const Navbar: FC<navbarProps> = ({
       </div>
 
       <ul className={showMenu ? styles.show : ""}>
-        <li onClick={() => handleClickToAbout()}>
+        <li onClick={handleClickToAbout}>
           About me
           <div className={`${styles.divItem} `} />
         </li>
-        <li onClick={() => handleClickToProjects()}>
+        <li onClick={handleClickToProjects}>
           Projects
           <div className={`${styles.divItem} `} />
         </li>
-        <li onClick={() => handleClickToContact()}>
+        <li onClick={handleClickToContact}>
           Contact me
           <div className={`${styles.divItem}`} />
         </li>
         <li>
           <div className={`${styles.contact2} }`}>
-            <TfiLinkedin className={styles.icon} />{" "}
-            <SiGithub className={styles.icon} />{" "}
-            <FaStackOverflow className={styles.icon} />
+            <a href="https://www.linkedin.com/in/kabil-naceur-7b3a921a9/">
+              <TfiLinkedin className={styles.icon} />
+            </a>
+            <a href="https://github.com/kabilnaceur">
+              <SiGithub className={styles.icon} />
+            </a>
+            <a href="https://stackoverflow.com/users/20712322/kabil-naceur">
+              <FaStackOverflow className={styles.icon} />
+            </a>
           </div>
         </li>
       </ul>
       <div className={`${styles.contact} `}>
-        <TfiLinkedin className={styles.icon} />{" "}
-        <SiGithub className={styles.icon} />{" "}
-        <FaStackOverflow className={styles.icon} />
+        <a href="https://www.linkedin.com/in/kabil-naceur-7b3a921a9/">
+          <TfiLinkedin className={styles.icon} />
+        </a>
+        <a href="https://github.com/kabilnaceur">
+          <SiGithub className={styles.icon} />
+        </a>
+        <a href="https://stackoverflow.com/users/20712322/kabil-naceur">
+          <FaStackOverflow className={styles.icon} />
+        </a>{" "}
       </div>
     </nav>
   );
