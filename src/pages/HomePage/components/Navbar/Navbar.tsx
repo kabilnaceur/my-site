@@ -3,7 +3,8 @@ import { FC, useEffect, useState } from "react";
 import "../../../../styles/main.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import { SiGithub } from "react-icons/si";
-import { TfiFacebook, TfiLinkedin } from "react-icons/tfi";
+import { TfiLinkedin } from "react-icons/tfi";
+import { FaStackOverflow } from "react-icons/fa";
 
 export interface navbarProps {
   handleClickToContact: () => void;
@@ -19,10 +20,6 @@ const Navbar: FC<navbarProps> = ({
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const handleShow = () => {
     setShowMenu(!showMenu);
-  };
-
-  const handleClick = (item: number): void => {
-    console.log("kbil");
   };
 
   useEffect(() => {
@@ -64,14 +61,14 @@ const Navbar: FC<navbarProps> = ({
           <div className={`${styles.contact2} }`}>
             <TfiLinkedin className={styles.icon} />{" "}
             <SiGithub className={styles.icon} />{" "}
-            <TfiFacebook className={styles.icon} />
+            <FaStackOverflow className={styles.icon} />
           </div>
         </li>
       </ul>
       <div className={`${styles.contact} `}>
         <TfiLinkedin className={styles.icon} />{" "}
         <SiGithub className={styles.icon} />{" "}
-        <TfiFacebook className={styles.icon} />
+        <FaStackOverflow className={styles.icon} />
       </div>
     </nav>
   );

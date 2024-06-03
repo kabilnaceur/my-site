@@ -5,14 +5,14 @@ import Button from "../../../../components/Button/Button";
 
 function Profile() {
   return (
-    <div className={styles.profileContainer}>
+    <div className={styles.profileContainer} data-aos="fade-left">
       <div className={`${"flex"} ${styles.imageContainer}`}>
         <div className={styles.cercle} />
         <div className={styles.image}>
           <img alt="Kabil photo" src={profile} />
         </div>
       </div>
-      <div className={styles.text}>
+      <div className={styles.text} data-aos="fade-right">
         <h2>Hi!👋 I am Kabil</h2>
         <h1>
           A <span className={styles.underline}>software developer</span> <br />

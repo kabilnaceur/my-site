@@ -6,7 +6,7 @@ import Profile from "./components/profile/Profile";
 import Projects from "./components/projects/Projects";
 import Skills from "./components/skills/Skills";
 import styles from "./homePage.module.scss";
-import { BiArrowFromBottom } from "react-icons/bi";
+import { FiArrowUp } from "react-icons/fi";
 
 function HomePage() {
   const scrollableContactRef = useRef<HTMLDivElement>(null);
@@ -30,7 +30,6 @@ function HomePage() {
   };
   const handleClickToAbout = (): void => {
     scrollableAboutRef.current?.scrollIntoView({ behavior: "smooth" });
-    console.log("hello");
   };
   const handleClickToProjects = (): void => {
     scrollableProjectsRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -69,7 +68,7 @@ function HomePage() {
             onClick={scrollToTop}
             className={styles.floatenButton}
           >
-            <BiArrowFromBottom className={styles.icon} aria-hidden="true" />
+            <FiArrowUp className={styles.icon} aria-hidden="true" />
           </button>
         ) : null}
       </div>
