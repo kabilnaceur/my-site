@@ -53,7 +53,7 @@ function HomePage() {
         handleClickToProjects={handleClickToProjects}
       />
       <div className={styles.container}>
-        <Profile />
+        <Profile handleClickToContact={handleClickToContact} />
       </div>
       <Informations scrollableAboutRef={scrollableAboutRef} />
       <div className={styles.container}>

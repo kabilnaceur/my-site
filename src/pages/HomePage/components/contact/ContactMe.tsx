@@ -63,7 +63,7 @@ const ContactMe: FC<contactMeProps> = ({
   };
   return (
     <div className={styles.container} ref={scrollableContactRef}>
-      <div className={styles.contactContainer} data-aos="fade-left">
+      <div className={styles.contactContainer}>
         <form
           ref={formRef}
           onSubmit={handleSubmit(onSubmit)}
@@ -100,7 +100,7 @@ const ContactMe: FC<contactMeProps> = ({
           />
         </form>
       </div>
-      <div style={{ width: "100%" }} data-aos="fade-right">
+      <div style={{ width: "100%" }}>
         <h2>Are you interested?</h2>
         <h2>Say hi!</h2>
         <div className={styles.imageContainer}>
