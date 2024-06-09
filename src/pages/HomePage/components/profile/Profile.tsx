@@ -2,11 +2,23 @@ import styles from "./profile.module.scss";
 import { profile } from "../../../../assets/images";
 import "../../../../styles/main.scss";
 import Button from "../../../../components/Button/Button";
+import { FC } from "react";
 
-function Profile() {
+export interface profileProps {
+  handleClickToContact: () => void;
+}
+
+const Profile: FC<profileProps> = ({ handleClickToContact }) => {
+  const handleClick = () => {
+    window.location.href = "https://github.com/kabilnaceur";
+  };
+
   return (
-    <div className={styles.profileContainer} data-aos="fade-left">
-      <div className={`${"flex"} ${styles.imageContainer}`}>
+    <div className={styles.profileContainer}>
+      <div
+        className={`${"flex"} ${styles.imageContainer}`}
+        data-aos="fade-left"
+      >
         <div className={styles.cercle} />
         <div className={styles.image}>
           <img alt="Kabil photo" src={profile} />
@@ -25,17 +37,19 @@ function Profile() {
               content={"Contact me"}
               backgroundColor={"#6752ea"}
               color={"#f4f3f8"}
+              onClick={handleClickToContact}
             />
           </div>
           <Button
-            content={"View portfolio"}
+            content={"View github"}
             backgroundColor={"#f4f3f8"}
             color={"#040415"}
+            onClick={handleClick}
           />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Profile;

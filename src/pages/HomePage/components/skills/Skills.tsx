@@ -43,7 +43,8 @@ function Skills() {
           <div className={styles.skillCard} key={index}>
             <img alt="logo skill" src={skill.logo} />
             <h5>{skill.name}</h5>
-            <h5>{skill.year} years</h5>
+            {/*  <h5>{skill.year} years</h5>
+             */}{" "}
           </div>
         ))}
       </div>

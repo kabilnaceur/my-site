@@ -67,10 +67,10 @@ const Informations: FC<scrollableAboutRef> = ({ scrollableAboutRef }) => {
       number: "1+",
       description:
         "During my year-plus tenure as a software engineer, I have honed my skills in full-stack development, contributing to several successful projects. I consistently delivered high-quality, scalable code while collaborating effectively with cross-functional teams. ",
-      title: "Years of experiance",
+      title: "Years of experience",
     },
     {
-      number: "+5",
+      number: "5+",
       description:
         "I have optimized user interfaces for intuitive navigation (40% increase in user satisfaction), ensured robust security measures for data protection (50% reduction in security incidents), and employed agile methodologies for high-performance web solutions (30% improvement in delivery time).",
       title: "Projects",
